@@ -1,0 +1,31 @@
+﻿@model DemoWebsite.Models.User
+
+@{
+    ViewData["Title"] = "User";
+}
+
+<@if (Model != null)
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Name</td>
+                    <td>@Model.Note</td>
+                </tr>
+            </tbody>
+        </table>
+}
+else
+{
+        <p>No user found.</p>
+}
+
+<form asp-action="Next" method="get">
+    <button type="submit" class="btn btn-primary">Next User</button>
+</form>
